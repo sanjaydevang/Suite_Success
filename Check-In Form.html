@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite Success - Guest Check-In Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 36px;
+            color: #007BFF;
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+            color: #555;
+            margin: 5px 0 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Suite Success</h1>
+        <p>Your gateway to seamless hotel management</p>
+    </header>
+    <h2>Guest Check-In Form</h2>
+    <form action="/submit_checkin" method="POST">
+        <label for="reservation">Reservation Number:</label>
+        <input type="text" id="reservation" name="reservation_number" placeholder="Enter Reservation Number" required>
+
+        <label for="name">Guest Name:</label>
+        <input type="text" id="name" name="guest_name" placeholder="Enter Guest Name" required>
+
+        <label for="id_verification">ID Verification:</label>
+        <select id="id_verification" name="id_verification" required>
+            <option value="passport">Passport</option>
+            <option value="drivers_license">Driver’s License</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="room">Room Number Assignment:</label>
+        <select id="room" name="room_number" required>
+            <option value="101">101</option>
+            <option value="102">102</option>
+            <option value="103">103</option>
+            <option value="104">104</option>
+        </select>
+
+        <label for="checkin_date">Check-In Date and Time:</label>
+        <input type="datetime-local" id="checkin_date" name="checkin_date_time" required>
+
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="additional_notes" rows="4" placeholder="Optional notes for staff"></textarea>
+
+        <button type="submit">Check-In</button>
+    </form>
+</body>
+</html>
